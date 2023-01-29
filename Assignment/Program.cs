@@ -10,6 +10,13 @@ namespace Assignment
     {
         static void Main(string[] args)
         {
+            Memory memory = new Memory(1000);
+            memory.Allocate(100);
+            foreach (var item in memory.memory)
+            {
+                Console.WriteLine($"{item.capacity}");
+            }
+            Console.ReadKey();
         }
     }
 }
