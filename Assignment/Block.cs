@@ -8,17 +8,23 @@ namespace Assignment
 {
     public class Block
     {
-        public int capacity;
-        public int Id;
-        public bool MainBlock;
-        public bool Busy;
-        public int Content;
-        public Block(int capacity, int id, bool mainBlock,bool busy)
+        public int Capacity { get; set; }   
+        public int Id { get; set; }
+        public bool Busy { get; set; }
+        public int Adress { get; set; }
+        public int EndAdress
         {
-            this.capacity = capacity;
+            get
+            {
+                return Capacity + Adress-1;
+            }
+        }
+        public Block(int capacity, int id,bool busy,int Adress)
+        {
+            Capacity = capacity;
             Id = id;
-            MainBlock = mainBlock;
             Busy = busy;
+            this.Adress = Adress;
         }
     }
 }
